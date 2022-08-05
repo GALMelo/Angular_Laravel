@@ -56,20 +56,20 @@ class UserController extends Controller
     public function register(Request $request)
     {
         //Primeiro pegamos todos os dados enviados para a API
-        $data = $request->all();
+        $data = json_decode($request->getContent());
 
         //Colocamos os dados nas suas devidas váriaveis
-        $name = $data['name'];
+        $name = $data->name;
 
         //Verificamos se o email e CPF são válidos
-        $email = $data['email'];
+        $email = $data->email;
         $this->checkEmail($email) ?: abort(400, 'Email inválido');
-        $cpf = $data['cpf'];
+        $cpf = $data->cpf;
         $this->checkCpf($cpf) ?: abort(400, 'CPF inválido');
 
 
-        $phone = $data['phone'] ? $data['phone'] : '';
-        $knowledge = $data['knowledge'];
+        $phone = $data->phone ? $data->phone : '';
+        $knowledge = $data->knowledge;
 
         //Verificamos se o usuário já existe no banco de dados
         $user = User::where('email', $email)->first();
@@ -84,7 +84,7 @@ class UserController extends Controller
         $user->phone = $phone;
         $user->knowledge = $knowledge;
         $user->save();
-        return response()->json($user, 201);
+        return view('welcome');
     }
 
     //Retorna todos os usuários
@@ -112,7 +112,8 @@ class UserController extends Controller
             abort(404, 'Usuário não encontrado');
         }
         //Checamos se o usário já foi validado se sim ele vai para não validado, caso não vai para validado
-        $user->validated = true ? $user->validated = false : $user->validated = true;
+        // $user->validated == true ? $user->validated = false : $user->validated = true;
+        $user->validated = !$user->validated;
         $user->save();
         return response()->json($user, 200);
     }

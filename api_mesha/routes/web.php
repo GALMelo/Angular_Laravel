@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/users/register', 'UserController@register');
-Route::get('/users/all', 'UserController@getAll');
-Route::get('/users/{id}', 'UserController@getById');
-Route::put('/users/validate/{id}', 'UserController@validate');
+Route::controller(UserController::class)->group(function () {
+    Route::post('/users/register', 'register');
+    Route::get('/users/all', 'getAll');
+    Route::get('/users/{id}', 'getById');
+    Route::put('/users/validate/{id}', 'validate');
+});
