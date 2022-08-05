@@ -21,8 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'cpf',
-        'celular',
-        'conhecimentos',
-        'validado',
+        'phone',
+        'knowledge',
+        'validated',
     ];
 }

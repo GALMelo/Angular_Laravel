@@ -18,9 +18,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('cpf')->unique();
-            $table->string('celular');
-            $table->string('conhecimentos');
-            $table->boolean('validado')->default(false);
+            $table->string('phone');
+            $table->string('knowledge');
+            $table->boolean('validated')->default(false);
             $table->timestamps();
         });
     }
