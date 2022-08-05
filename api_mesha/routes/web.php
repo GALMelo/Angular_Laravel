@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('/users/register', 'UserController@register');
+Route::get('/users/all', 'UserController@getAll');
+Route::get('/users/{id}', 'UserController@getById');
+Route::put('/users/validate/{id}', 'UserController@validate');
