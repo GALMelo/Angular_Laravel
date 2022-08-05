@@ -17,10 +17,3 @@ use App\Http\Controllers\UserController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::controller(UserController::class)->group(function () {
-    Route::post('/users/register', 'register');
-    Route::get('/users/all', 'getAll');
-    Route::get('/users/{id}', 'getById');
-    Route::put('/users/validate/{id}', 'validate');
-});

@@ -107,12 +107,12 @@ class UserController extends Controller
     //Atualiza um usuário para ser validado ou não
     public function validateUser($id)
     {
+
         $user = User::find($id);
         if (!$user) {
             abort(404, 'Usuário não encontrado');
         }
         //Checamos se o usário já foi validado se sim ele vai para não validado, caso não vai para validado
-        // $user->validated == true ? $user->validated = false : $user->validated = true;
         $user->validated = !$user->validated;
         $user->save();
         return response()->json($user, 200);
