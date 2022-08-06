@@ -12,13 +12,23 @@ export class FormRegisterComponent implements OnInit {
   cpf = '';
   phone = '';
   knowledges: Array<any> = [
-    { name: 'Git', value: 'Git', selected: false },
-    { name: 'React', value: 'React', selected: false },
-    { name: 'PHP', value: 'PHP', selected: false },
-    { name: 'NodeJS', value: 'NodeJS', selected: false },
-    { name: 'DevOps', value: 'DevOps', selected: false },
-    { name: 'Banco de dados', value: 'Banco de dados', selected: false },
-    { name: 'TypeScript', value: 'Typescript', selected: false },
+    { name: 'Git', value: 'Git', selected: false, disabled: false },
+    { name: 'React', value: 'React', selected: false, disabled: false },
+    { name: 'PHP', value: 'PHP', selected: false, disabled: false },
+    { name: 'NodeJS', value: 'NodeJS', selected: false, disabled: false },
+    { name: 'DevOps', value: 'DevOps', selected: false, disabled: false },
+    {
+      name: 'Banco de dados',
+      value: 'Banco de dados',
+      selected: false,
+      disabled: false,
+    },
+    {
+      name: 'TypeScript',
+      value: 'Typescript',
+      selected: false,
+      disabled: false,
+    },
   ];
 
   constructor(private configService: ConfigService) {}
@@ -29,11 +39,32 @@ export class FormRegisterComponent implements OnInit {
     const isChecked = $event.target.checked;
 
     this.knowledges = this.knowledges.map((know) => {
+      if (this.getCountSelected(this.knowledges) >= 3) {
+        this.applyDisable(this.knowledges, true);
+      } else {
+        this.applyDisable(this.knowledges, false);
+      }
       if (know.value === value) {
         know.selected = isChecked;
         return know;
       }
       return know;
+    });
+  }
+
+  getCountSelected(knowledges: Array<any>) {
+    let selecteds = 0;
+    knowledges.forEach((know) => {
+      selecteds += know.selected ? 1 : 0;
+    });
+    return selecteds;
+  }
+
+  applyDisable(knowledges: Array<any>, value: boolean) {
+    knowledges.forEach((know) => {
+      if (!know.selected) {
+        know.disabled = value;
+      }
     });
   }
 
