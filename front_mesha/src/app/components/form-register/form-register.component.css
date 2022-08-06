@@ -141,3 +141,7 @@
     width: 100%;
   }
 }
+
+.container input:disabled ~ .checkmark {
+  background-color: #575959;
+}

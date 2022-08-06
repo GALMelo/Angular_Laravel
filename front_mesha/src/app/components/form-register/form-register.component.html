@@ -19,7 +19,7 @@
     <label for="knowledge">Conhecimentos</label>
     <div class="knowledge">
       <label class="container"  *ngFor="let know of knowledges; let i=index"> {{know.name}}
-        <input type="checkbox" [value]="know.value" [checked]="know.selected" (change)="onChangeKnowledge($event)">
+        <input type="checkbox" [disabled]="know.disabled" [value]="know.value" [checked]="know.selected" (change)="onChangeKnowledge($event)">
         <span class="checkmark"></span>
       </label>
     </div>
