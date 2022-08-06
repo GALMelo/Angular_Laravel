@@ -6,9 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ViewAllComponent } from './users/view-all/view-all.component';
 import { ViewUserComponent } from './users/view-user/view-user.component';
+import { FormRegisterComponent } from './components/form-register/form-register.component';
+import { RegisterUserComponent } from './views/register-user/register-user.component';
 
 @NgModule({
-  declarations: [AppComponent, ViewAllComponent, ViewUserComponent],
+  declarations: [AppComponent, ViewAllComponent, ViewUserComponent, FormRegisterComponent, RegisterUserComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
