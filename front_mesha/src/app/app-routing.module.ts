@@ -6,7 +6,7 @@ import { RegisterUserComponent } from './views/register-user/register-user.compo
 
 const routes: Routes = [
   {
-    path: ':nomedocara/registrar',
+    path: ':NOMECOLABORADOR/registrar',
     component: RegisterUserComponent,
   },
   { path: 'registros', component: ViewAllComponent },
