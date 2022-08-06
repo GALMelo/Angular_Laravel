@@ -84,7 +84,7 @@ class UserController extends Controller
         $user->phone = $phone;
         $user->knowledge = $knowledge;
         $user->save();
-        return response()->json($user, 200)
+        return response()->json($user, 200);
     }
 
     //Retorna todos os usuários
