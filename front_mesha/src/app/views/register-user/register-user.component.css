@@ -1,0 +1,17 @@
+.wrapper
+{
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(to left, #c61f93, #6c13cf);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  padding: 1rem;
+}
+
+.wrapper h1
+{
+  color: white;
+}

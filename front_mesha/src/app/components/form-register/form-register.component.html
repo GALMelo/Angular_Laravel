@@ -1,0 +1,48 @@
+<form class="form-register" action="" (submit)="handleSubmit($event)" #form="ngForm">
+  <div class="input-group">
+    <label for="name">Nome</label>
+    <input id="name" name="name" [(ngModel)]="name" type="text" placeholder="João Marcos." >
+  </div>
+  <div class="input-group">
+    <label for="name">Email</label>
+    <input id="name" name="email" [(ngModel)]="email" type="text" placeholder="example@email.com">
+  </div>
+  <div class="input-group">
+    <label for="name">CPF</label>
+    <input id="name" name="cpf" [(ngModel)]="cpf" type="text" placeholder="xxx.xxx.xxx-xx">
+  </div>
+  <div class="input-group">
+    <label for="name">Telefone</label>
+    <input id="name" name="phone" [(ngModel)]="phone" type="text" placeholder="(xx) xxxxx-xxxx">
+  </div>
+  <div class="input-group">
+    <label for="knowledge">Conhecimentos</label>
+    <div class="knowledge">
+      <label class="container"> PHP
+        <input type="checkbox" checked="checked">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container"> JAVA
+        <input type="checkbox" checked="checked">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container"> TypeScript
+        <input type="checkbox" checked="checked">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container"> .NET
+        <input type="checkbox" checked="checked">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container"> .NET
+        <input type="checkbox" checked="checked">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container"> .NET
+        <input type="checkbox" checked="checked">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+  </div>
+  <input type="submit" value="Registrar">
+</form>
