@@ -12,4 +12,7 @@ export class ConfigService {
   getAllUsers() {
     return this.http.get('http://localhost:8000/api/users/all');
   }
+  getUser(name: string) {
+    return this.http.get('http://localhost:8000/api/users/getById/' + name);
+  }
 }
