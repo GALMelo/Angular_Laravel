@@ -18,4 +18,20 @@ export class ViewAllComponent implements OnInit {
       this.users = data;
     });
   }
+
+  searchUsers($event: any) {
+    let input = $event.target.parentNode.parentNode.children[0];
+    if (input.value.trim().length == 0) {
+      input.focus();
+      this.users = this.getAllUsers();
+      return;
+    }
+
+    let newUsers = this.users.filter((user: any) => {
+      if (user.name.includes(input.value)) {
+        return user;
+      }
+    });
+    this.users = newUsers;
+  }
 }
