@@ -92,3 +92,33 @@ li#btn a:hover
   font-size: 1.4rem;
   color: rgba(0, 0, 0, 0.6);
 }
+
+#search
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  background: white;
+  gap: 1rem;
+}
+
+#search input
+{
+  width: 100%;
+  font-size: 1rem;
+  background: none;
+}
+
+#search svg
+{
+  fill: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: 0.3s;
+}
+#search span:hover svg
+{
+  fill: rgba(0, 0, 0, 0.8);
+}

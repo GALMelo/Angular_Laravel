@@ -16,8 +16,18 @@ body
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
-input
+input, button
 {
   outline: none;
   border: none;
+}
+
+ul
+{
+  list-style: none;
+}
+
+a
+{
+  text-decoration: none;
 }
