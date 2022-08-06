@@ -8,16 +8,16 @@ Para começar o projeto primeiro vamos criar nosso banco de dados para a nossa A
 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=Example
-DB_USERNAME=root
+DB_PORT=3306<br>
+DB_DATABASE=Example<br>
+DB_USERNAME=root<br>
 DB_PASSWORD=root
 
 - Apos criarmos nosso banco de dados devemos rodar o seguinte comando:
-  php artisan migrate
+  `php artisan migrate`
 
 - Com ele a table de user deve ser criada no banco de dados que você acaba de criar;
 - Após criada a table de user podemos usar o comando:
-  php artisan serve
+  `php artisan serve`
 - Inciando assim a nossa api na porta: 8000
 - Caso queira testar basta acessar: http://127.0.0.1:8000 e a página de boas vindas do laravel deve aparecer.
