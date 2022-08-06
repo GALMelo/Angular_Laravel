@@ -1,45 +1,49 @@
 <form class="form-register" action="" (submit)="handleSubmit($event)" #form="ngForm">
   <div class="input-group">
     <label for="name">Nome</label>
-    <input id="name" name="name" [(ngModel)]="name" type="text" placeholder="João Marcos." >
+    <input id="name" name="name" [(ngModel)]="name" type="text" placeholder="João Marcos." required>
   </div>
   <div class="input-group">
     <label for="name">Email</label>
-    <input id="name" name="email" [(ngModel)]="email" type="text" placeholder="example@email.com">
+    <input id="name" name="email" [(ngModel)]="email" ngModel [email]="true" type="text" placeholder="example@email.com" required>
   </div>
   <div class="input-group">
     <label for="name">CPF</label>
-    <input id="name" name="cpf" [(ngModel)]="cpf" type="text" placeholder="xxx.xxx.xxx-xx">
+    <input id="name" name="cpf" mask="000.000.000-00" [(ngModel)]="cpf" type="text" placeholder="xxx.xxx.xxx-xx" required>
   </div>
   <div class="input-group">
     <label for="name">Telefone</label>
-    <input id="name" name="phone" [(ngModel)]="phone" type="text" placeholder="(xx) xxxxx-xxxx">
+    <input id="name" name="phone" mask="(00) 00000-0000" [(ngModel)]="phone" type="text" placeholder="(xx) xxxxx-xxxx" required>
   </div>
   <div class="input-group">
     <label for="knowledge">Conhecimentos</label>
     <div class="knowledge">
-      <label class="container"> PHP
-        <input type="checkbox" checked="checked">
+      <label class="container"> Git
+        <input type="checkbox" >
         <span class="checkmark"></span>
       </label>
-      <label class="container"> JAVA
-        <input type="checkbox" checked="checked">
+      <label class="container"> React
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container"> PHP
+        <input type="checkbox" >
+        <span class="checkmark"></span>
+      </label>
+      <label class="container"> NodeJs
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container"> DevOps
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container"> Banco de dados
+        <input type="checkbox" >
         <span class="checkmark"></span>
       </label>
       <label class="container"> TypeScript
-        <input type="checkbox" checked="checked">
-        <span class="checkmark"></span>
-      </label>
-      <label class="container"> .NET
-        <input type="checkbox" checked="checked">
-        <span class="checkmark"></span>
-      </label>
-      <label class="container"> .NET
-        <input type="checkbox" checked="checked">
-        <span class="checkmark"></span>
-      </label>
-      <label class="container"> .NET
-        <input type="checkbox" checked="checked">
+        <input type="checkbox" >
         <span class="checkmark"></span>
       </label>
     </div>
