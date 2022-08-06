@@ -21,7 +21,9 @@ export class ViewUserComponent implements OnInit {
   }
 
   onChangeValidate($event: any) {
-    this.user.validated = !this.user.validated;
+    this.configService.updateUser(this.user.id).subscribe((data) => {
+      this.user = data;
+    });
   }
 
   getUser(name: any) {
