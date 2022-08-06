@@ -18,35 +18,12 @@
   <div class="input-group">
     <label for="knowledge">Conhecimentos</label>
     <div class="knowledge">
-      <label class="container"> Git
-        <input type="checkbox"  value="Git" >
-        <span class="checkmark"></span>
-      </label>
-      <label class="container"> React
-        <input type="checkbox" value="React">
-        <span class="checkmark"></span>
-      </label>
-      <label class="container"> PHP
-        <input type="checkbox" value="PHP">
-        <span class="checkmark"></span>
-      </label>
-      <label class="container"> NodeJs
-        <input type="checkbox" value="NodeJS">
-        <span class="checkmark"></span>
-      </label>
-      <label class="container"> DevOps
-        <input type="checkbox" value="DevOps">
-        <span class="checkmark"></span>
-      </label>
-      <label class="container"> Banco de dados
-        <input type="checkbox" value="Banco de dados">
-        <span class="checkmark"></span>
-      </label>
-      <label class="container"> TypeScript
-        <input type="checkbox" value="TypeScript">
+      <label class="container"  *ngFor="let know of knowledges; let i=index"> {{know.name}}
+        <input type="checkbox" [value]="know.value" [checked]="know.selected" (change)="onChangeKnowledge($event)">
         <span class="checkmark"></span>
       </label>
     </div>
   </div>
   <input type="submit" value="Registrar">
 </form>
+
