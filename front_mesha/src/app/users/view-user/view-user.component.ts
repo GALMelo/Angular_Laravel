@@ -8,6 +8,8 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./view-user.component.css'],
 })
 export class ViewUserComponent implements OnInit {
+  user: any;
+
   constructor(
     private configService: ConfigService,
     private route: ActivatedRoute
@@ -17,7 +19,11 @@ export class ViewUserComponent implements OnInit {
     const name = this.route.snapshot.paramMap.get('NOMECOLABORADOR');
     this.getUser(name);
   }
-  user: any;
+
+  onChangeValidate($event: any) {
+    this.user.validated = !this.user.validated;
+  }
+
   getUser(name: any) {
     this.configService.getUser(name).subscribe((data) => {
       this.user = data;

@@ -1,0 +1,147 @@
+.wrapper
+{
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(to left, #c61f93, #6c13cf);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  padding: 1rem;
+}
+
+.wrapper h1
+{
+  color: white;
+}
+
+.user-container
+{
+  margin-top: 3rem;
+  max-width: 500px;
+  padding: 3rem;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.4);
+}
+
+.divider
+{
+  width: 100%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.user-container ul
+{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+}
+.user-container ul li
+{
+  color: #A8BBBC;
+  font-weight: 500;
+}
+
+.user-container ul li span
+{
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.user-container ul li#btn
+{
+  width: 100%;
+  text-align: center;
+}
+
+.user-container ul li:nth-child(1)
+{
+  font-weight: normal;
+  font-size: 1.4rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+li#validate
+{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#validate-info-on
+{
+  color: #199A4D;
+}
+
+#validate-info-off
+{
+  color: #bf1e1e;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 28px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #A8BBBC;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #199A4D;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #199A4D;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(30px);
+  -ms-transform: translateX(30px);
+  transform: translateX(30px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 28px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
