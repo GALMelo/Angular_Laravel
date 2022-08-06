@@ -125,10 +125,10 @@ class UserController extends Controller
     }
 
     //Atualiza um usuário para ser validado ou não
-    public function validateUser($id)
+    public function validateUser(Request $request)
     {
-
-        $user = User::find($id);
+        $data = json_decode($request->getContent());
+        $user = User::find($data->id);
         if (!$user) {
             abort(404, 'Usuário não encontrado');
         }
