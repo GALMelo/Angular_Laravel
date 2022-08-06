@@ -24,5 +24,5 @@ Route::controller(UserController::class)->group(function () {
     Route::get('/users/getById/{id}', 'getById');
     Route::get('/users/getByName/{name}', 'getByName');
     Route::get('/users/search/{name}', 'searchUser');
-    Route::put('/users/validate/{id}', 'validateUser');
+    Route::put('/users/validate', 'validateUser');
 });
