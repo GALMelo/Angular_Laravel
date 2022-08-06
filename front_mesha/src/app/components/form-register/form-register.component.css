@@ -1,0 +1,143 @@
+/* FORM */
+.form-register
+{
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  gap: 1rem;
+  background: white;
+  padding: 1.2rem;
+  border-radius: 4px;
+  color: #333;
+}
+
+.form-register .input-group
+{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.form-register label
+{
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.form-register input
+{
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 4px;
+  background: white;
+  box-shadow: 0 0 0 1px rgba(51, 51, 51, 0.3);
+  transition: 0.2s;
+}
+
+.form-register input:hover
+{
+  box-shadow: 0 0 0 2px rgba(51, 51, 51, 0.3);
+}
+
+.form-register input[type="submit"]
+{
+  align-self: center;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(to left, #c61f93, #6c13cf);
+  max-width: 300px;
+  box-shadow: none;
+  transition: 0.3s;
+}
+.form-register input[type="submit"]:hover
+{
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+/* CHECK BOX */
+
+.knowledge
+{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  box-shadow: 0 0 0 1.5px rgba(51, 51, 51, 0.3);
+  transition: 0.2s;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #A8BBBC;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #199A4D;
+  box-shadow: 0 0 0 1.5px #199A4D;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 8px;
+  top: 4px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* QUERIES */
+@media screen and (max-width: 800px) {
+  .form-register
+  {
+    width: 100%;
+  }
+}
