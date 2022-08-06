@@ -10,9 +10,12 @@ export class ViewAllComponent implements OnInit {
   constructor(private configService: ConfigService) {}
 
   ngOnInit(): void {
-    const reqUsers = this.configService.getAllUsers();
-    reqUsers.subscribe((data) => {
-      console.log(data);
+    this.getAllUsers();
+  }
+  users: any;
+  getAllUsers() {
+    this.configService.getAllUsers().subscribe((data) => {
+      this.users = data;
     });
   }
 }
