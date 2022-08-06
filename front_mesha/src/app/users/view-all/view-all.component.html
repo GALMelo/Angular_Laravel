@@ -1,24 +1,21 @@
-<h2>Registros</h2>
-<ul class="users">
-  <li *ngFor="let user of users">
-    <ul>
-      <span class="name">{{user.name}}</span>
-    </ul>
-    <ul>
-        <span class="email">{{user.email}}</span>
-      </ul>
-      <ul>
-        <span class="cpf">{{user.cpf}}</span>
-      </ul>
-      <ul>
-        <span class="phone">{{user.phone}}</span>
-      </ul>
-      <ul>
-        <span class="validated">{{ user.validated ? 'Validado' : 'Não validado' }}</span>
-      </ul>
-      <ul>
-        <span class="knowledge">{{user.knowledge}}</span>
-      </ul>
+<div class="wrapper">
+  <h1>Registros</h1>
 
-  </li>
-</ul>
+  <section class="users-container">
+    <div *ngFor="let user of users" class="user-info">
+      <ul>
+        <li id="name">{{user.name}}</li>
+        <div class="divider"></div>
+        <li id="email"><span>Email:</span> {{user.email}}</li>
+        <li id="cpf"><span>CPF:</span> {{user.cpf}}</li>
+        <li id="phone"><span>Tel.:</span> {{user.phone}}</li>
+        <li id="validated"><span>Check:</span> {{ user.validated ? 'Validado' : 'Não validado' }}</li>
+        <li id="knowledge"><span>Conhecimentos:</span> {{user.knowledge}}</li>
+        <li id="btn">
+          <a [routerLink]="['/' + user.name + '/validar']" target="_blank">Validar</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+</div>

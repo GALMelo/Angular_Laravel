@@ -24,10 +24,16 @@ export class ConfigService {
     });
   }
 
+  updateUser(id: number) {
+    return this.http.put('http://localhost:8000/api/users/validate', {
+      id: id,
+    });
+  }
+
   getAllUsers() {
     return this.http.get('http://localhost:8000/api/users/all');
   }
   getUser(name: string) {
-    return this.http.get('http://localhost:8000/api/users/getById/' + name);
+    return this.http.get('http://localhost:8000/api/users/getByName/' + name);
   }
 }

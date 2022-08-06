@@ -1,1 +1,23 @@
-<p>view-user works!</p>
+<div class="wrapper">
+  <h1>Validar Usuário</h1>
+  <section class="user-container">
+    <ul>
+      <li id="name">{{user.name}}</li>
+      <div class="divider"></div>
+      <li id="email"><span>Email:</span> {{user.email}}</li>
+      <li id="cpf"><span>CPF:</span> {{user.cpf}}</li>
+      <li id="phone"><span>Tel.:</span> {{user.phone}}</li>
+      <li id="validated"><span>Check:</span> {{ user.validated ? 'Validado' : 'Não validado' }}</li>
+      <li id="knowledge"><span>Conhecimentos:</span> {{user.knowledge}}</li>
+      <li id="validate">
+        <label class="switch">
+          <input type="checkbox" [value]="user.validated" [checked]="user.validated" (change)="onChangeValidate($event)">
+          <span class="slider round"></span>
+        </label>
+        <span [id]="user.validated ? 'validate-info-on': 'validate-info-off' ">
+          {{ user.validated ? 'Validado' : 'Não validado' }}
+        </span>
+      </li>
+    </ul>
+  </section>
+</div>
