@@ -90,7 +90,7 @@ class UserController extends Controller
     //Retorna todos os usuários
     public function getAll()
     {
-        $users = User::all();
+        $users = User::orderBy('name', 'asc')->get();
         return response()->json($users, 200);
     }
 
@@ -98,6 +98,26 @@ class UserController extends Controller
     public function getById($id)
     {
         $user = User::find($id);
+        if (!$user) {
+            abort(404, 'Usuário não encontrado');
+        }
+        return response()->json($user, 200);
+    }
+
+    //Retorna um usuário pelo nome
+    public function getByName($name)
+    {
+        $user = User::where('name', 'like', '%' . $name . '%')->first();
+        if (!$user) {
+            abort(404, 'Usuário não encontrado');
+        }
+        return response()->json($user, 200);
+    }
+
+    //Retorna um usuários pelo nome
+    public function searchUser($name)
+    {
+        $user = User::where('name', 'like', '%' . $name . '%')->get();
         if (!$user) {
             abort(404, 'Usuário não encontrado');
         }
