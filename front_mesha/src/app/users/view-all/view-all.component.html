@@ -17,7 +17,7 @@
         <li id="validated"><span>Check:</span> {{ user.validated ? 'Validado' : 'Não validado' }}</li>
         <li id="knowledge"><span>Conhecimentos:</span> {{user.knowledge}}</li>
         <li id="btn">
-          <a [routerLink]="['/' + user.name + '/validar']" target="_blank">Validar</a>
+          <a [routerLink]="['/' + user.name + '/validar']" >Validar</a>
         </li>
       </ul>
     </div>

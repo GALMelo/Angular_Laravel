@@ -24,6 +24,8 @@
       </label>
     </div>
   </div>
-  <input type="submit" value="Registrar">
+  <input id="registrar" type="submit" value="Registrar" [disabled]="!name || !email || !cpf" [ngClass]="{'disabled-button': !name || !email || !cpf}">
 </form>
+
+
 
