@@ -72,7 +72,7 @@ class UserController extends Controller
         $knowledge = $data->knowledge;
 
         //Verificamos se o usuário já existe no banco de dados
-        $user = User::where('email', $email)->first();
+        $user = User::where('cpf', $cpf)->first();
         if ($user) {
             abort(400, 'Usuário já existe');
         }

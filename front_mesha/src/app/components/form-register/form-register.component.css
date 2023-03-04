@@ -22,6 +22,14 @@
   gap: 0.5rem;
 }
 
+.form-register input[type="submit"][disabled] {
+  background-color: #888;
+  background-image: none;
+  color: #555;
+  cursor: default;
+  border: none;
+}
+
 .form-register label
 {
   font-size: 1rem;
