@@ -55,16 +55,28 @@ class UserController extends Controller
 
     public function register(Request $request)
     {
+
         //Primeiro pegamos todos os dados enviados para a API
         $data = json_decode($request->getContent());
 
         //Colocamos os dados nas suas devidas váriaveis
         $name = $data->name;
 
-        //Verificamos se o email e CPF são válidos
+        //verificamos se email e CPF estão cadastrados
         $email = $data->email;
-        $this->checkEmail($email) ?: abort(400, 'Email inválido');
+        $searchEmailDB = User::where('email', $email)->first();
+        if ($searchEmailDB) {
+            abort(400, 'Email já cadastrado');
+        }
+
         $cpf = $data->cpf;
+        $searchCpfDB = User::where('cpf', $cpf)->first();
+        if ($searchCpfDB) {
+            abort(400, 'CPF já cadastrado');
+        }
+
+        //Verificamos se o email e CPF são válidos
+        $this->checkEmail($email) ?: abort(400, 'Email inválido');
         $this->checkCpf($cpf) ?: abort(400, 'CPF inválido');
 
 
