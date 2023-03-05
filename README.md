@@ -2,6 +2,12 @@
 
 # Api
 
+Pós git-clone
+
+- Após o download do projeto rode o comando `composer install` para instalar as depêndências do projeto.
+
+Configuração Banco de Dados
+
 - Para começar o projeto primeiro vamos criar nosso banco de dados para a nossa API;
 - Utilizando mysql devemos criar um banco de dados;
 - Dentro da pasta api_mesha devemos criar um arquivo chamado .env seguindo o modelo .env.example;
@@ -16,8 +22,10 @@ DB_PASSWORD=root
 
 - Apos criarmos nosso banco de dados devemos rodar o seguinte comando:
   `php artisan migrate`
-
 - Com ele a table de user deve ser criada no banco de dados que você acaba de criar;
+
+Iniciando o projeto
+
 - Após criada a table de user podemos usar o comando:
   `php artisan serve`
 - Inciando assim a nossa api na porta: 8000
@@ -29,7 +37,7 @@ DB_PASSWORD=root
   `npm install`
 
 - Após todos os modulos baixados basta rodar:
-  `ng serve`
+  `npm start`
   Para iniciar o servidor do angular;
 
 - Com o servidor ligado temos acesso as seguintes rotas:
