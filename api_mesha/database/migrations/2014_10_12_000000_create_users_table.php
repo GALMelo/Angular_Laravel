@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
-            $table->string('cpf')->unique();
+            $table->string('email');
+            $table->string('cpf');
             $table->string('phone');
             $table->string('knowledge');
             $table->boolean('validated')->default(false);

@@ -15,9 +15,7 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
 Route::controller(UserController::class)->group(function () {
     Route::post('/users/register', 'register');
     Route::get('/users/all', 'getAll');
