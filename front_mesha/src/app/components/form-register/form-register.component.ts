@@ -137,8 +137,14 @@ export class FormRegisterComponent implements OnInit {
             if (error.error.message === 'CPF inválido') {
               alert('CPF inválido');
             }
+            if (error.error.message === 'CPF já cadastrado') {
+              alert('CPF já cadastrado');
+            }
             if (error.error.message === 'Email inválido') {
               alert('Email inválido');
+            }
+            if (error.error.message === 'Email já cadastrado') {
+              alert('Email já cadastrado');
             }
             if (error.error.message === 'Usuário já existe') {
               alert('Usuário já existe');
