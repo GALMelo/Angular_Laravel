@@ -10,7 +10,7 @@ Configuração Banco de Dados
 
 - Para começar o projeto primeiro vamos criar nosso banco de dados para a nossa API;
 - Utilizando mysql devemos criar um banco de dados;
-- Dentro da pasta api_mesha devemos criar um arquivo chamado .env seguindo o modelo .env.example;
+- Dentro da pasta api_laravel devemos criar um arquivo chamado .env seguindo o modelo .env.example;
 - Nesse ponto devemos nos atentar no nosso .env as variáveis: DB_DATABASE, DB_USERNAME e DB_PASSWORD. Devemos colocar o nome e as credenciais do banco que acabamos de criar:
 
 DB_CONNECTION=mysql<br>
