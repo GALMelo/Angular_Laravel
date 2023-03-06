@@ -1,4 +1,4 @@
-## Mesha_test
+## Angular and Laravel app
 
 # Api
 
