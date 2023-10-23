@@ -24,7 +24,7 @@ DB_PASSWORD=root
   `php artisan migrate`
 - Com ele a table de user deve ser criada no banco de dados que você acaba de criar;
 
-Iniciando o projeto
+Iniciando o projeto:
 
 - Após criada a table de user podemos usar o comando:
   `php artisan serve`
