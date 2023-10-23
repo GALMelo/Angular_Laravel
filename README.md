@@ -6,7 +6,7 @@ Pós git-clone
 
 - Após o download do projeto rode o comando `composer install` para instalar as depêndências do projeto.
 
-Configuração Banco de Dados
+Configuração Banco de Dados:
 
 - Para começar o projeto primeiro vamos criar nosso banco de dados para a nossa API;
 - Utilizando mysql devemos criar um banco de dados;
